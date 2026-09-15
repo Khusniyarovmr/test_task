@@ -4,6 +4,8 @@
 
 Приложение полностью клиентское: backend, база данных и переменные окружения для запуска не нужны.
 
+Рабочая production-версия: [https://testchart.khumar.pro](https://testchart.khumar.pro).
+
 ## Быстрый запуск
 
 Понадобятся:
@@ -40,6 +42,8 @@ npx playwright install chromium
 | `npm run test:e2e`      | Запустить функциональные и визуальные Playwright-тесты |
 
 Production-сборка записывается в `dist/`. Её можно раздавать любым сервером статических файлов, например Nginx.
+
+Готовый production-vhost находится в [`deploy/nginx/testchart.conf`](deploy/nginx/testchart.conf). Он включает HTTPS, fallback на `index.html` для клиентских маршрутов, отключённое кэширование HTML и годовое кэширование хешированных файлов из `assets/`.
 
 ## Как инициализировать график четырьмя последовательностями
 
