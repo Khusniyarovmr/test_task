@@ -1,0 +1,104 @@
+.root {
+  --chart-frame: #a9adaf;
+  --chart-tooltip-border: #8f8f8f;
+  --chart-tooltip-background: #fff;
+  --chart-tooltip-text: #151515;
+
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  color: var(--chart-tooltip-text);
+  font-family: Arial, Helvetica, sans-serif;
+
+  :global(.recharts-wrapper),
+  :global(.recharts-surface) {
+    overflow: visible;
+    outline: none;
+  }
+}
+
+.plotFrame {
+  stroke: var(--chart-frame);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.squareDot,
+.activeMarker {
+  pointer-events: none;
+}
+
+.tooltip {
+  min-width: 326px;
+  padding: 15px 16px 16px;
+  color: var(--chart-tooltip-text);
+  font-size: 23px;
+  line-height: 1.16;
+  white-space: nowrap;
+  background: var(--chart-tooltip-background);
+  border: 1px solid var(--chart-tooltip-border);
+  border-radius: 4px;
+  box-shadow: 0 2px 7px rgb(0 0 0 / 35%);
+}
+
+.tooltipDate {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.tooltipRows {
+  display: grid;
+  gap: 2px;
+}
+
+.tooltipRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.tooltipRow strong {
+  font-weight: 700;
+}
+
+.tooltipMarker {
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+}
+
+.empty {
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+  color: #5f6265;
+  border: 1px solid var(--chart-frame);
+}
+
+@media (max-width: 480px) {
+  .tooltip {
+    min-width: 220px;
+    padding: 8px;
+    font-size: 17px;
+  }
+
+  .tooltipDate {
+    font-size: 16px;
+  }
+
+  .tooltipMarker {
+    flex-basis: 14px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

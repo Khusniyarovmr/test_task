@@ -1,0 +1,23 @@
+.page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 48px 24px;
+  overflow: hidden;
+  background: linear-gradient(#e6f2ff 0 76px, transparent 76px), #fff0f1;
+}
+
+.chartStage {
+  width: min(100%, 640px);
+  margin-top: 28px;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 32px 8px;
+  }
+
+  .chartStage {
+    margin-top: 16px;
+  }
+}
